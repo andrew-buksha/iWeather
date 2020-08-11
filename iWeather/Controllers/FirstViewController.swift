@@ -9,10 +9,15 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    var weatherService: WeatherService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        weatherService = WeatherService(networkService: NetworkService())
+        weatherService.fetchWeather(query: "Taganrog") { weather, error in
+            
+        }
     }
 
 
